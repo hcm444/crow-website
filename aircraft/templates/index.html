@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belarus Aircraft Information</title>
+	<style>
+		body {
+			background-color: #000;
+			color: #0F0;
+			font-family: monospace;
+		}
+
+		h1 {
+			font-size: 50px;
+			text-align: center;
+			color: #0F0;
+			text-shadow: 0px 0px 10px #0F0;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin: 0 auto;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			text-align: center;
+			box-shadow: 0px 0px 20px #0F0;
+		}
+
+		th, td {
+			padding: 15px;
+			border-bottom: 1px solid #0F0;
+			font-size: 20px;
+		}
+
+		th {
+			background-color: #444;
+			color: #0F0;
+		}
+
+		tr:hover {
+			background-color: #111;
+		}
+
+		p {
+			text-align: center;
+			font-size: 16px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			color: #0F0;
+		}
+
+		a {
+			color: #0F0;
+			text-decoration: none;
+			border-bottom: 1px dotted #0F0;
+			transition: all 0.3s;
+		}
+
+		a:hover {
+			color: #0F0;
+			background-color: #111;
+			text-decoration: none;
+			border-bottom: 1px solid #0F0;
+			padding: 2px;
+			margin-left: -2px;
+			margin-right: -2px;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+    setInterval(function() {
+        location.reload();
+    }, 120000);  // Refresh the page every 120 seconds (2 minutes)
+	</script>
+	<h1>CAWWWWWWWW!!!!!!!!</h1>
+
+	<table>
+		<tr>
+			<th>ICAW24</th>
+			<th>Cawsign</th>
+			<th>Origin Cawntry</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>Altitude</th>
+			<th>Velocity</th>
+			<th>Heading</th>
+		</tr>
+		{% for aircraft in aircrafts %}
+		<tr>
+			<td>{{ aircraft.icao24 }}</td>
+			<td>{{ aircraft.callsign }}</td>
+			<td>{{ aircraft.origin_country }}</td>
+			<td>{{ aircraft.latitude }}</td>
+			<td>{{ aircraft.longitude }}</td>
+			<td>{{ aircraft.altitude }}</td>
+			<td>{{ aircraft.velocity }}</td>
+			<td>{{ aircraft.heading }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<p>Timestamp: {{ timestamp }}</p>
+	{% load static %}
+	<p>
+		<img src="{% static 'maps/map.png' %}" alt="Map">
+	</p>
+	<p>
+		<a>This is a simple Django site that tracks CROWS over the country of Ukraine. The above map displays information about CROWS detected inside the country over the last six hours. CAWWW!!!!!!</a>
+	</p>
+	<p>
+		<a href="https://info.flagcounter.com/bh88"><img src="https://s11.flagcounter.com/count/bh88/bg_00FF00/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+	</p>
+</body>
+</html>
